@@ -5,27 +5,27 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".SendSms">
 
     <EditText
         android:id="@+id/txtMessage"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Enter message here"
         android:inputType="text"
-        tools:ignore="MissingConstraints">
-    </EditText>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="send"
+        android:layout_marginTop="16dp"
         android:text="Send"
-        tools:ignore="MissingConstraints,OnClick"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="82dp">
-
-    </com.google.android.material.button.MaterialButton>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtMessage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

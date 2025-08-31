@@ -14,19 +14,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SCC"
         tools:targetApi="31">
+
+        <!-- This is your main screen. It gets the LAUNCHER intent filter. -->
         <activity
             android:name=".SendSms"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            tools:ignore="MissingClass">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- DO NOT declare your SemaphoreSmsSender class here. -->
+        <!-- It is not an activity and does not belong in the manifest. -->
+
     </application>
 
 </manifest>
