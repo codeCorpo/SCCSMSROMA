@@ -5,27 +5,95 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".SendSms">
+    tools:context=".SendSms"
+    android:background="#2C3E50" > <!-- Changed: Main background color -->
 
-    <EditText
-        android:id="@+id/txtMessage"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Enter message here"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnSend"
+    <TextView
+        android:id="@+id/lblTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Send"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:text="Send New Message"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#ECF0F1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" /> <!-- Changed: Title text color -->
+
+    <!-- Recipient's Number Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtPhoneNumberLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:hint="Recipient's Mobile Number"
+        android:textColorHint="#95A5A6"
+        app:boxStrokeColor="#1ABC9C"
+        app:hintTextColor="#1ABC9C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtMessage" />
+        app:layout_constraintTop_toBottomOf="@id/lblTitle"
+        app:startIconTint="#ECF0F1">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:textColor="#ECF0F1" /> <!-- Changed: Input text color -->
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Message Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtMessageLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Your Message"
+        android:textColorHint="#95A5A6"
+        app:boxStrokeColor="#1ABC9C"
+        app:hintTextColor="#1ABC9C"
+        app:layout_constraintBottom_toTopOf="@+id/btnSend"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtPhoneNumberLayout"
+        app:startIconTint="#ECF0F1">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtMessage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:textColor="#ECF0F1" /> <!-- Changed: Input text color -->
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Send Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSend"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:text="Send Message"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#16A085"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" /> <!-- Changed: Button background and text color -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

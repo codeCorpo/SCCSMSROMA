@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SemaphoreSmsSender {
-    private static final String API_KEY = "6380e89700998d4ea986c898af333dd2";
+    private static final String API_KEY = "8a34c80dad25abdd76c4c7bcc1bf6e98";
     private static final String SENDER_NAME = "FarmBite";
     private static final String ENDPOINT = "https://api.semaphore.co/api/v4/messages";
 
